@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj": {}
+    "D:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj": {}
   },
   "projects": {
-    "d:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj": {
+    "D:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj",
+        "projectUniqueName": "D:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj",
         "projectName": "backend-api",
-        "projectPath": "d:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj",
+        "projectPath": "D:\\Admin\\VietDrivePro\\backend-api\\backend-api.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\Admin\\VietDrivePro\\backend-api\\obj\\",
+        "outputPath": "D:\\Admin\\VietDrivePro\\backend-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
