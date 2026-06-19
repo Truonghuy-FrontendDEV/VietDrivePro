@@ -1,0 +1,78 @@
+version: '3.9'
+
+services:
+
+  # ── 1. SQL Server ──────────────────────────────────────────
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: vietdrivepro-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "VietDrivePro@2025"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      #- ./db-init:/docker-entrypoint-initdb.d
+    networks:
+      - vietdrivepro-net
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'VietDrivePro@2025' -Q 'SELECT 1' -C || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  # ── 2. Backend ASP.NET Core ────────────────────────────────
+  backend:
+    build:
+      context: ./backend-api
+      dockerfile: Dockerfile
+    container_name: vietdrivepro-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:5105
+      ConnectionStrings__DefaultConnection: >
+        Server=sqlserver,1433;
+        Database=VietDriveProDB;
+        User Id=sa;
+        Password=VietDrivePro@2025;
+        TrustServerCertificate=True;
+        MultipleActiveResultSets=True;
+      Jwt__Key: "VietDrivePro_SuperSecret_Key_2025!@#$%^&*()"
+      Jwt__Issuer: "VietDrivePro"
+      Jwt__Audience: "VietDriveProUsers"
+      Jwt__ExpiresInDays: "7"
+    ports:
+      - "5105:5105"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - vietdrivepro-net
+    restart: unless-stopped
+
+  # ── 3. Frontend React ──────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend-web
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost:5105/api
+    container_name: vietdrivepro-web
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - vietdrivepro-net
+    restart: unless-stopped
+
+# ── Volumes & Networks ─────────────────────────────────────
+volumes:
+  sqlserver_data:
+
+networks:
+  vietdrivepro-net:
+    driver: bridge

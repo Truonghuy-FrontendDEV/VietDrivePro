@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+Migrations/
+appsettings.Development.json
+**/.git
+*.md
+.env
