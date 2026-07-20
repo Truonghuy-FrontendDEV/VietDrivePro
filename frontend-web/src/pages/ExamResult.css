@@ -1,0 +1,43 @@
+.result-wrap { padding: 28px 0 48px; }
+.result-hero {
+  border-radius: 14px; padding: 32px; text-align: center;
+  margin-bottom: 24px; color: #fff;
+}
+.result-hero.pass { background: linear-gradient(135deg, #2e7d32, #388e3c); }
+.result-hero.fail { background: linear-gradient(135deg, #c62828, #d32f2f); }
+.result-icon  { font-size: 52px; margin-bottom: 8px; }
+.result-hero h1 { font-size: 22px; margin-bottom: 12px; }
+.result-score { font-size: 52px; font-weight: 900; margin-bottom: 8px; }
+.result-meta  { font-size: 15px; opacity: .9; margin-bottom: 10px; }
+.result-time  { font-size: 12px; opacity: .7; }
+.critical-banner {
+  background: rgba(255,255,255,.2); border-radius: 8px;
+  padding: 8px 16px; margin: 10px auto; max-width: 400px; font-weight: 600;
+}
+.result-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.filter-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-tab {
+  padding: 8px 18px; border-radius: 20px; border: 2px solid #ddd;
+  background: #fff; cursor: pointer; font-size: 13px; font-weight: 600;
+  transition: all .15s;
+}
+.filter-tab.active { background: #1565c0; color: #fff; border-color: #1565c0; }
+.detail-list { display: flex; flex-direction: column; gap: 16px; }
+.detail-card {
+  background: #fff; border-radius: 10px; padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06); border-left: 5px solid #ccc;
+}
+.detail-card.correct { border-left-color: #4caf50; }
+.detail-card.wrong   { border-left-color: #f44336; }
+.detail-header { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+.detail-num    { font-weight: 700; font-size: 14px; color: #555; }
+.detail-content{ font-size: 16px; font-weight: 600; line-height: 1.6; margin-bottom: 12px; }
+.detail-img    { max-width: 100%; max-height: 200px; border-radius: 8px; margin-bottom: 12px; object-fit: contain; }
+.detail-answers{ display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+.detail-ans    { padding: 8px 14px; border-radius: 8px; font-size: 14px; background: #f5f5f5; }
+.ans-correct       { background: #e8f5e9; color: #2e7d32; font-weight: 600; }
+.ans-wrong-pick    { background: #ffebee; color: #c62828; font-weight: 600; }
+.detail-explain {
+  background: #fff8e1; border-radius: 8px; padding: 10px 14px;
+  font-size: 13px; color: #5d4037; border-left: 3px solid #f9a825;
+}

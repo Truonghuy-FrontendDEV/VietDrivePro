@@ -1,0 +1,91 @@
+/* Time.css - Styles for Timer Component */
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.timer-container.normal {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1d4ed8;
+}
+
+.timer-container.danger {
+  background: #fef2f2;
+  border: 1.5px solid #fca5a5;
+  color: #dc2626;
+  animation: pulse 1s infinite;
+}
+
+.timer-icon {
+  font-size: 20px;
+}
+
+.timer-time {
+  min-width: 58px;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+.timer-progress-wrapper {
+  width: 80px;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.timer-progress-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.9s linear;
+}
+
+.timer-progress-bar.normal {
+  background: #3b82f6;
+}
+
+.timer-progress-bar.danger {
+  background: #dc2626;
+}
+
+/* Animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .timer-container {
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .timer-time {
+    min-width: 50px;
+  }
+
+  .timer-progress-wrapper {
+    width: 60px;
+  }
+
+  .timer-icon {
+    font-size: 16px;
+  }
+}
