@@ -157,3 +157,4 @@ D:\Admin\VietDrivePro\backend-api\obj\Debug\net10.0\backend-api.pdb
 D:\Admin\VietDrivePro\backend-api\obj\Debug\net10.0\backend-api.genruntimeconfig.cache
 D:\Admin\VietDrivePro\backend-api\obj\Debug\net10.0\ref\backend-api.dll
 D:\Admin\VietDrivePro\backend-api\bin\Debug\net10.0\appsettings.Production.json
+D:\Admin\VietDrivePro\backend-api\obj\Debug\net10.0\backend-api.sourcelink.json
